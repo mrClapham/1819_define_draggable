@@ -1,11 +1,13 @@
 {
   "devtools_port": 9090,
   "startup_app": {
-    "name": "OpenFin appseed",
-    "description": "A vanilla appseed for OpenFin applications",
+    "name": "OpenFin 1819 Define Draggable",
+    "description": "Define draggable event listener issues",
     "url": "http://localhost:9070",
-    "uuid": "openfin-closing-events-demo",
-    "autoShow": true
+    "uuid": "openfin-define-draggable-demo",
+    "autoShow": true,
+    "frame": false
+
   },
   "runtime": {
     "arguments": "",
@@ -13,7 +15,7 @@
   },
   "shortcut": {
     "company": "OpenFin",
-    "description": "OpenFin appseed",
-    "name": "OpenFin appseed"
+    "description": "OpenFin 1819 Define Draggable",
+    "name": "OpenFin 1819 Define Draggable"
   }
 }
