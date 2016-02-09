@@ -17,5 +17,13 @@
     "company": "OpenFin",
     "description": "OpenFin 1819 Define Draggable",
     "name": "OpenFin 1819 Define Draggable"
+  },
+  "dialogSettings" : {
+    "logo" : "https://openfin.co/wp-content/uploads/2014/11/logo.png",
+    "bgColor" : 4163183909,
+    "textColor" : 4293980400,
+    "progressBarBgColor" : 4278190080,
+    "progressBarFillColor" : 4281513430,
+    "progressBarBorderColor" : 4282137660
   }
 }

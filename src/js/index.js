@@ -19,8 +19,12 @@ function initWithOpenFin(){
   console.log("OpenFin is available. ");
   _dragArea = document.querySelector("#dragger");
   fin.desktop.Window.getCurrent().defineDraggableArea(_dragArea);
+    fin.desktop.System.getMonitorInfo(function (monitorInfo) {
+        console.log("This object contains information about all monitors: ", monitorInfo);
+    });
     initDomEventListeners();
     initDragEventListener();
+    initExternalWindow();
 }
 
 function initDomEventListeners(){
@@ -71,9 +75,33 @@ function initDragEventListener(){
         e.target.classList.add('mouseover');
 
     });
-
-
 }
+/*
+There needs to be an onSuccess callback when a window is created.
+Within the callback you can execute any code specific to the created window which may be accesed via 'this'.
+
+To obtain the DOM of that window use 'this.contentWindow.document'.
+*/
+
+
+initExternalWindow = function(){
+    var customWinow = new fin.desktop.Window({
+        url: "http://localhost:9070/draggable.html",
+        name: "frameless_example",
+        defaultWidth: 300,
+        defaultHeight: 300,
+        autoShow: true,
+        frame: false
+    }, function(){
+        this.contentWindow.document.getElementById('toolbar')
+        //obtain the toolbar DOM element.
+        toolbar = this.contentWindow.document.getElementById('toolbar')
+
+        //call defineDraggableArea method with the toolbar.
+        this.defineDraggableArea(toolbar);
+    });
+
+};
 
 function initNoOpenFin(){
   alert("OpenFin is not available. You are in a browser.");
