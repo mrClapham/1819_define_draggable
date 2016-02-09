@@ -85,7 +85,7 @@ To obtain the DOM of that window use 'this.contentWindow.document'.
 
 
 initExternalWindow = function(){
-    var customWinow = new fin.desktop.Window({
+    var customWindow = new fin.desktop.Window({
         url: "http://localhost:9070/draggable.html",
         name: "frameless_example",
         defaultWidth: 300,
@@ -93,10 +93,8 @@ initExternalWindow = function(){
         autoShow: true,
         frame: false
     }, function(){
-        this.contentWindow.document.getElementById('toolbar')
         //obtain the toolbar DOM element.
         toolbar = this.contentWindow.document.getElementById('toolbar')
-
         //call defineDraggableArea method with the toolbar.
         this.defineDraggableArea(toolbar);
     });
