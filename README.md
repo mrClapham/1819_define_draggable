@@ -1,4 +1,11 @@
 # OpenFin: 1819 define draggable
+The purpose of this demonstration is to show how mouse Events are captured by draggable areas and possibly strategies for tackling the issue - particularly mouseLeave.
+
+When a DOM element is nested within a draggable area that area will prevent standard mouseEvents (see [https://developer.chrome.com/apps/app_window](https://developer.chrome.com/apps/app_window) ).
+Nesting a DOM element already nested in a '-webkit-app-region: drag' inside a further DOM element set to '-webkit-app-region: no-drag' and creating a buffer via padding will allow the innermost Dom element to once again receive mouseEvents.
+
+
+
 This is a vanilla JavaScript app seed for developing OenFin apps. It is Free from frameworks and build systems, though you may add them as you see fit.
 
 It has a simple Node/Express server for local development.
